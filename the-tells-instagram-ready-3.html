@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Tells · Short-Form Editing Checklist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@1,6..72,400..500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0c0d0f;
+      --card-bg: #121418;
+      --border: #1e2229;
+      --text-main: #f0f2f5;
+      --text-muted: #8b929e;
+      --badge-bg: #16181f;
+      --badge-border: #262a33;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text-muted);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+      padding: 0 20px 80px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .logo {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--text-main);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+    .logo b {
+      color: #fff;
+    }
+    .nav-btn {
+      background: #171920;
+      color: var(--text-main);
+      border: 1px solid var(--border);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: background 0.15s ease;
+    }
+    .nav-btn:hover {
+      background: #232732;
+    }
+
+    header {
+      padding: 56px 0 36px;
+    }
+    .tagline {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #6c7380;
+      margin-bottom: 14px;
+      font-weight: 500;
+    }
+    h1 {
+      font-size: clamp(2rem, 5vw, 2.5rem);
+      line-height: 1.18;
+      color: var(--text-main);
+      font-weight: 500;
+      letter-spacing: -0.03em;
+      margin-bottom: 16px;
+    }
+    h1 em {
+      font-family: 'Newsreader', serif;
+      font-style: italic;
+      font-weight: 400;
+    }
+    .subtitle {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .section-head {
+      margin-top: 56px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    .section-head h2 {
+      color: var(--text-main);
+      font-size: 1.25rem;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+    }
+    .section-count {
+      font-size: 0.8rem;
+      color: #636a75;
+      font-weight: 500;
+    }
+    .section-desc {
+      font-size: 0.88rem;
+      color: #6c7380;
+      margin: 12px 0 6px;
+    }
+
+    .item {
+      display: flex;
+      gap: 16px;
+      padding: 22px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .item-id {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.72rem;
+      color: #8b929e;
+      background: var(--badge-bg);
+      border: 1px solid var(--badge-border);
+      height: fit-content;
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-weight: 600;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .item-body h3 {
+      font-size: 0.98rem;
+      color: var(--text-main);
+      font-weight: 500;
+      margin-bottom: 6px;
+      letter-spacing: -0.01em;
+    }
+    .item-body p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+    .item-body b {
+      color: #e4e7eb;
+      font-weight: 500;
+    }
+
+    .cta-card {
+      margin-top: 64px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 40px 24px;
+      text-align: center;
+    }
+    .cta-card h2 {
+      color: var(--text-main);
+      font-size: 1.45rem;
+      margin-bottom: 12px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+    }
+    .cta-card h2 em {
+      font-family: 'Newsreader', serif;
+      font-style: italic;
+    }
+    .cta-card p {
+      font-size: 0.92rem;
+      margin-bottom: 24px;
+      color: var(--text-muted);
+    }
+    .cta-button {
+      display: inline-block;
+      background: var(--text-main);
+      color: #0b0c0e;
+      padding: 11px 24px;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: opacity 0.15s ease;
+    }
+    .cta-button:hover {
+      opacity: 0.9;
+    }
+
+    footer {
+      margin-top: 48px;
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: #555b66;
+    }
+    footer a {
+      color: #6c7380;
+      text-decoration: none;
+    }
+    footer a:hover {
+      color: var(--text-main);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <nav>
+      <a href="#" class="logo">the<b>tells</b></a>
+      <a href="https://www.instagram.com/onk4r.visuals/" class="nav-btn" target="_blank" rel="noopener noreferrer">Follow</a>
+    </nav>
+
+    <header>
+      <div class="tagline">The checklist · short-form editing</div>
+      <h1>The tells that make your video look <em>amateur</em>.</h1>
+      <p class="subtitle">Thirty-two named defects and how to fix each one. Not a better camera. Not a bigger budget. Fixes to the video you already shot.</p>
+    </header>
+
+    <!-- 1. FAST FIXES -->
+    <section>
+      <div class="section-head">
+        <h2>Fast fixes</h2>
+        <span class="section-count">12 tells</span>
+      </div>
+      <p class="section-desc">Settings and cosmetics. Ten minutes or less.</p>
+
+      <div class="item">
+        <span class="item-id">C1</span>
+        <div class="item-body">
+          <h3>Thin, roomy audio</h3>
+          <p>Echo off bare walls, mic too far away. The biggest tell there is, and it gives you away faster than bad video ever will. <b>Get the mic about a foot from your face, record in a room with soft things in it, run a light noise-reduction pass.</b></p>
+        </div>
+      </div>
+
+      <div class="item">
+        <span class="item-id">C2</span>
+        <div class="item-body">
+          <h3>Music louder than your voice</h3>
+          <p>If they strain to hear a word, they leave, and they won't know why. <b>Voice on top, music underneath. Play it back on your phone speaker at half volume. Lose a word, it's still too loud.</b></p>
+        </div>
+      </div>
+
+      <div class="item">
+        <span class="item-id">C3</span>
+        <div class="item-body">
+          <h3>Light coming from the wrong direction</h3>
+          <p>Light behind or above you, face darker than the wall. <b>Turn and face the light. A window works. Never shoot with the bright thing behind your head.</b></p>
+        </div>
+      </div>
+
+      <div class="item">
+        <span class="item-id">C4</span>
+        <div class="item-body">
+          <h3>Grain from a dark room</h3>
+          <p>Shooting somewhere too dark and letting the phone push the sensor. Reads as cheap instantly. <b>Add real light. Don't drag the exposure slider up, that just makes the grain worse.</b></p>
+        </div>
+      </div>
+
+      <div class="item">
+        <span class="item-id">C5</span>
+        <div class="item-body">
+          <h3>Framing that's off</h3>
+          <p>Too much empty space above your head, or your face parked dead center. <b>Eyes in the top third, a little room above the head, not a ceiling of nothing.</b></p>
+        </div>
+      </div>
+
+      <div class="item">
+        <span class="item-id">C6</span>
+        <div class="item-body">
+          <h3>Shaky handheld</h3>
+          <p>Wobble on a shot that had no reason to move. <b>Brace against a wall or table, or turn stabilization on. If it didn't need to walk, stop walking.</b></p>
+        </div>
+      </div>
+
+      <div class="item">
+        <span class="item-id">C7</span>
+        <div class="item-body">
+          <h3>The default CapCut font</h3>
+          <p>Everyone has seen it a thousand times and clocks it on sight. <b>Pick one clean bold font and use that same one on every video. Using the same one every time is what makes it look like a choice.</b></p>
+        </div>
+      </div>
+
+      <div class="item">
+        <span class="item-id">C8</span>
+        <div class="item-body">
+          <h3>Too many fonts and colors</h3>
+          <p>Three fonts, four colors, two animations in one video. <b>Cut it to one font, one or two colors, one animation. That's the whole kit.</b></p>
+        </div>
+      </div>
+
+      <div class="item">
+        <span class="item-id">C9</span>
+        <div class="item-body">
+          <h3>Captions hidden behind the buttons</h3>
+          <p>Text tucked under the caption bar or behind the like and comment icons. <b>Keep captions in the middle third, clear of the bottom bar and the icons on the right.</b></p>
+        </div>
+      </div>
+
+      <div class="item">
+        <span class="item-id">C10</span>
+        <div class="item-body">
+          <h3>Captions landing late</h3>
+          <p>Words showing up a beat after you say them. It breaks the read. <b>Auto-caption it, then drag the timing so each word hits when you say it, not after.</b></p>
+        </div>
+      </div>
+
+      <div class="item">
+        <span class="item-id">C11</span>
+        <div class="item-body">
+          <h3>Brightness jumping between cuts</h3>
+          <p>One clip warm, the next cold, inside the same scene. <b>Put the clips next to each other before you export and match exposure and color. Doesn't have to be perfect. It just can't jump.</b></p>
+        </div>
+      </div>
+
+      <div class="item">
+        <span class="item-id">C12</span>
+        <div class="item-body">
+          <h3>Numbers you can't read</h3>
+          <p>A stat too small, gone too fast, on a busy background. <b>Bigger, longer, on a clean background. If they can't read it in one glance, it's just decoration.</b></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. STRUCTURAL -->
+    <section>
+      <div class="section-head">
+        <h2>Structural</h2>
+        <span class="section-count">14 tells</span>
+      </div>
+      <p class="section-desc">The stuff you can feel but can't name.</p>
+
+      <div class="item">
+        <span class="item-id">S1</span>
+        <div class="item-body">
+          <h3>Dead space between your sentences</h3>
+          <p>A little silence after every line. Doesn't feel like much, but it adds up to around 8 seconds of nothing in a 45-second video. <b>Cut the gaps. Butt every line right up against the next.</b></p>
+        </div>
+      </div>
+
+      <div class="item">
+        <span class="item-id">S2</span>
+        <div class="item-body">
+          <h3>Preamble before the point</h3>
+          <p>"Hey guys, so today I wanted to talk about." Two to four seconds that earn nothing. <b>Delete it. Start on the first sentence that actually matters.</b></p>
+        </div>
+      </div>
+
+      <div class="item">
+        <span class="item-id">S3</span>
+        <div class="item-body">
+          <h3>Giving the answer away too early</h3>
+          <p>The payoff lands at 4 seconds and there's no reason to watch second 5. <b>Hold it. Set it up early, pay it off near the end.</b></p>
+        </div>
+      </div>
+
+      <div class="item">
+        <span class="item-id">S4</span>
+        <div class="item-body">
+          <h3>Nothing left unresolved</h3>
+          <p>No open question means the viewer can leave any second and lose nothing. <b>Open a loop early and keep it open. Give them a reason to stay for the answer.</b></p>
+        </div>
+      </div>
+
+      <div class="item">
+        <span class="item-id">S5</span>
+        <div class="item-body">
+          <h3>Not enough cuts</h3>
+          <p>Eight seconds on one angle with nothing changing. Attention drifts even when the words are good. <b>Change something every few seconds. A cut, a zoom, some b-roll, a new angle.</b></p>
+        </div>
+      </div>
+
+      <div class="item">
+        <span class="item-id">S6</span>
+        <div class="item-body">
+          <h3>Too many cuts</h3>
+          <p>A cut every half second so nothing gets to land. That's not pace, it's noise. <b>Let the shots breathe. Cut when the meaning changes, not on a timer.</b></p>
+        </div>
+      </div>
+
+      <div class="item">
+        <span class="item-id">S7</span>
+        <div class="item-body">
+          <h3>Cutting in the wrong spot</h3>
+          <p>Cutting through the middle of a thought instead of the gap between two. Feels off even when you can't say why. <b>Cut between ideas, not through one.</b></p>
+        </div>
+      </div>
+
+      <div class="item">
+        <span class="item-id">S8</span>
+        <div class="item-body">
+          <h3>Sentences that drag</h3>
+          <p>Long sentences full of clauses and qualifiers. Written English read aloud. <b>Keep spoken sentences short. One idea each. Say it the way you'd say it to a friend.</b></p>
+        </div>
+      </div>
+
+      <div class="item">
+        <span class="item-id">S9</span>
+        <div class="item-body">
+          <h3>Flat, vague language</h3>
+          <p>Abstract words with no picture in them. "It really helps a lot with engagement." <b>Say the concrete version. Something they can picture beats a vague claim every time.</b></p>
+        </div>
+      </div>
+
+      <div class="item">
+        <span class="item-id">S10</span>
+        <div class="item-body">
+          <h3>Three ideas in one video</h3>
+          <p>All three end up half-explained and nobody remembers any of them. <b>One idea per video. The other two are their own videos.</b></p>
+        </div>
+      </div>
+
+      <div class="item">
+        <span class="item-id">S11</span>
+        <div class="item-body">
+          <h3>A weak first frame</h3>
+          <p>Your spoken hook is fine but frame one is you mid-blink against a blank wall. <b>Make the first frame deliberate. Movement, a strong expression, text, anything. It gets half a second to earn the next one.</b></p>
+        </div>
+      </div>
+
+      <div class="item">
+        <span class="item-id">S12</span>
+        <div class="item-body">
+          <h3>Wrong energy for the video</h3>
+          <p>Full podcast delivery on a 30-second short, or forced hype on a calm topic. <b>Match how you're talking to the length and the subject. Don't perform an energy the video doesn't have.</b></p>
+        </div>
+      </div>
+
+      <div class="item">
+        <span class="item-id">S13</span>
+        <div class="item-body">
+          <h3>No real ending</h3>
+          <p>The video trails off or stops mid-breath. No landing means no rewatch, share, or follow. <b>End on an actual last line. The payoff is the last real beat. After that, one closing line, then stop.</b></p>
+        </div>
+      </div>
+
+      <div class="item">
+        <span class="item-id">S14</span>
+        <div class="item-body">
+          <h3>Text hook fighting the spoken hook</h3>
+          <p>Two different hooks in the same two seconds. They read one and hear the other and take in neither. <b>Make them work together. Text says one thing, your voice says another, together they pull.</b></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. UPSTREAM -->
+    <section>
+      <div class="section-head">
+        <h2>Upstream</h2>
+        <span class="section-count">6 tells</span>
+      </div>
+      <p class="section-desc">Editing can't fix these. So don't try.</p>
+
+      <div class="item">
+        <span class="item-id">U1</span>
+        <div class="item-body">
+          <h3>Nobody wants the topic</h3>
+          <p>A great edit of something nobody wants is still something nobody wants. <b>No amount of editing fixes this. Check people actually want the idea before you polish it.</b></p>
+        </div>
+      </div>
+
+      <div class="item">
+        <span class="item-id">U2</span>
+        <div class="item-body">
+          <h3>The account is about five things</h3>
+          <p>Nothing builds on anything else and no audience ever forms. <b>Pick a lane. Let the account be about one thing.</b></p>
+        </div>
+      </div>
+
+      <div class="item">
+        <span class="item-id">U3</span>
+        <div class="item-body">
+          <h3>No reason to watch you over anyone else</h3>
+          <p>The same information is on a thousand accounts and yours doesn't add anything. <b>Bring the thing only you have. Your angle, your proof, your experience.</b></p>
+        </div>
+      </div>
+
+      <div class="item">
+        <span class="item-id">U4</span>
+        <div class="item-body">
+          <h3>Not posting enough</h3>
+          <p>Once every ten days. There's no editing trick for too few reps. <b>Post more. Craft can't make up for volume this low.</b></p>
+        </div>
+      </div>
+
+      <div class="item">
+        <span class="item-id">U5</span>
+        <div class="item-body">
+          <h3>Talking to nobody in particular</h3>
+          <p>Aimed at "people" instead of one specific person. <b>Write it to one real viewer. Picture them before you hit record.</b></p>
+        </div>
+      </div>
+
+      <div class="item">
+        <span class="item-id">U6</span>
+        <div class="item-body">
+          <h3>Wrong format for the idea</h3>
+          <p>A 12-minute idea jammed into 30 seconds, or a 30-second idea stretched to 12 minutes. <b>Match the length to the idea. Not everything is a short.</b></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLOSING CARD -->
+    <div class="cta-card">
+      <h2>Fix these and your video stops looking <em>amateur</em>.</h2>
+      <p>That's the promise. Not views. Not going viral. Just a video that doesn't give you away anymore.</p>
+      <a href="https://www.instagram.com/onk4r.visuals/" class="cta-button" target="_blank" rel="noopener noreferrer">Follow on Instagram</a>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <span>The Tells · short-form editing</span>
+      <a href="#">@onk4r.visuals</a>
+    </footer>
+  </div>
+
+</body>
+</html>
